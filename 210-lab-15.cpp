@@ -29,16 +29,13 @@ public:
 };
 
 int main() {
-	// set up container, object, and variables needed for reading data from file
 	vector<Movie> movies;
 	Movie temp;
 	string screenwriter, title;
 	int releaseYear;
-
-	// read data from file. order: title, year released, screenwriter name.
 	ifstream infile;
-	infile.open("input.txt");
 
+	infile.open("input.txt");
 	if (infile.good()) {
 		while (getline(infile,title)) {
 			infile >> releaseYear;
