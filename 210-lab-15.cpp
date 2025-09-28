@@ -1,9 +1,7 @@
 // COMSC-210 | Lab 15 | Dainiz Almazan
 // IDE used: CLion
 
-/* Code a Movie class that has the screenwriter, the year released, and the title as its private member variables.
- * It has the standard setters and getters for each private member variable. Also code a print() method which prints the
- * object data in a simple format.
+/*
  * Your code should read data from an input file, using the data below, which lists data in this order: title, year
  * released, screenwriter name.
  * Read this data into a temporary Movie object. Then append that object to your container.
@@ -12,7 +10,29 @@
  * Towards the end of your main() function, output the contents of the array/vector.
  */
 
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+const int WIDTH = 10;
+
 class Movie {
+	string screenwriter;
+	int releaseYear;
+	string title;
+public:
+	string getScreenwriter() const {return screenwriter;}
+	int getReleaseYear() const {return releaseYear;}
+	string getTitle() const {return title;}
+	void setScreenwriter(string screenwriter) {this->screenwriter = screenwriter;}
+	void setReleaseYear(int releaseYear) {this->releaseYear = releaseYear;}
+	void setTitle(string title) {this->title = title;}
+	void print() const {
+		cout << setw(WIDTH) << "Movie: " << title << endl;
+		cout << setw(WIDTH) << "\tYear released: " << releaseYear << endl;
+		cout << setw(WIDTH) << "\tScreenwriter: " << screenwriter << endl;
+	}
 
 };
 
