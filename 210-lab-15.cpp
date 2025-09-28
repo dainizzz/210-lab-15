@@ -1,13 +1,6 @@
 // COMSC-210 | Lab 15 | Dainiz Almazan
 // IDE used: CLion
 
-/*
-
- * For your container, you can choose an <array> class array or a <vector> class vector. Store your four records in this
- * container.
- * Towards the end of your main() function, output the contents of the array/vector.
- */
-
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -47,11 +40,23 @@ int main() {
 	infile.open("input.txt");
 
 	if (infile.good()) {
-
+		while (getline(infile,title)) {
+			// need to ignore character left in stream
+			infile >> releaseYear;
+			getline(infile,screenwriter);
+			temp.setScreenwriter(title);
+			temp.setReleaseYear(releaseYear);
+			temp.setScreenwriter(screenwriter);
+			movies.push_back(temp);
+		}
 		infile.close();
 	}
 	else
 		cout << "Error opening file" << endl;
+
+	for (auto movie : movies) {
+		movie.print();
+	}
 
 	return 0;
 }
