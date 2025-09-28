@@ -11,3 +11,11 @@
  * container.
  * Towards the end of your main() function, output the contents of the array/vector.
  */
+
+class Movie {
+
+};
+
+int main() {
+	return 0;
+}
