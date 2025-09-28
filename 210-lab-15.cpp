@@ -2,9 +2,7 @@
 // IDE used: CLion
 
 /*
- * Your code should read data from an input file, using the data below, which lists data in this order: title, year
- * released, screenwriter name.
- * Read this data into a temporary Movie object. Then append that object to your container.
+
  * For your container, you can choose an <array> class array or a <vector> class vector. Store your four records in this
  * container.
  * Towards the end of your main() function, output the contents of the array/vector.
@@ -12,7 +10,9 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 #include <string>
+#include <vector>
 using namespace std;
 
 const int WIDTH = 10;
@@ -33,9 +33,25 @@ public:
 		cout << setw(WIDTH) << "\tYear released: " << releaseYear << endl;
 		cout << setw(WIDTH) << "\tScreenwriter: " << screenwriter << endl;
 	}
-
 };
 
 int main() {
+	// set up container, object, and variables needed for reading data from file
+	vector<Movie> movies;
+	Movie temp;
+	string screenwriter, title;
+	int releaseYear;
+
+	// read data from file. order: title, year released, screenwriter name.
+	ifstream infile;
+	infile.open("input.txt");
+
+	if (infile.good()) {
+
+		infile.close();
+	}
+	else
+		cout << "Error opening file" << endl;
+
 	return 0;
 }
