@@ -41,13 +41,13 @@ int main() {
 
 	if (infile.good()) {
 		while (getline(infile,title)) {
-			// need to ignore character left in stream
 			infile >> releaseYear;
-			getline(infile,screenwriter);
-			temp.setScreenwriter(title);
+			infile >> screenwriter;
+			temp.setTitle(title);
 			temp.setReleaseYear(releaseYear);
 			temp.setScreenwriter(screenwriter);
 			movies.push_back(temp);
+			infile.ignore();
 		}
 		infile.close();
 	}
