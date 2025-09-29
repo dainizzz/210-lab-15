@@ -16,6 +16,7 @@ class Movie {
 	string screenwriter;
 	int releaseYear;
 	string title;
+// Similarly, because classes are private by default, it's necessary to include the public: access specifer here
 public:
 	string getScreenwriter() const {return screenwriter;}
 	int getReleaseYear() const {return releaseYear;}
@@ -42,6 +43,8 @@ int main() {
 		while (getline(infile,title)) {
 			infile >> releaseYear;
 			infile >> screenwriter;
+			// After storing the values from the file in placeholder variables, the setter functions are used to modify
+			// the data in the temp object before it gets appended to the vector.
 			temp.setTitle(title);
 			temp.setReleaseYear(releaseYear);
 			temp.setScreenwriter(screenwriter);
