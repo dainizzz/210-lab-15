@@ -11,6 +11,8 @@ using namespace std;
 const int WIDTH = 10;
 
 class Movie {
+	// Because the default access specifier for classes is private, these attributes are private
+	// without needing to include the private: access specifier
 	string screenwriter;
 	int releaseYear;
 	string title;
